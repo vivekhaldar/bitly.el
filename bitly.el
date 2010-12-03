@@ -22,7 +22,7 @@
 ;;; Commentary: 
 ;; bitly.el allows shortening URLs through the api the bit.ly service
 ;; provides. See http://code.google.com/p/bitly-api/ for info about
-;; the tumblr.com api service.
+;; the bit.ly api service.
 ;;
 ;; Installation:
 ;; You will need to register with bit.ly and get an API key. Customize
@@ -68,8 +68,7 @@ shortened URL."
 	 (bounds (bounds-of-thing-at-point 'url)))
     (delete-region (car bounds) (cdr bounds))
     (bitly-strip-http-headers resultbuffer)
-    (insert-buffer-substring resultbuffer)
-    ))
+    (insert-buffer-substring resultbuffer)))
 
 
 (defun bitly-strip-http-headers (httpbuffer)
